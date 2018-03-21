@@ -1,8 +1,17 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.0.0/workbox-sw.js');
 if (workbox) {
   registerRoutes()
+  initPrecaching()
 } else {
   console.log('Oh, workbox did not load')
+}
+
+function initPrecaching() {
+  workbox.precaching.precacheAndRoute([
+    { url: '/scripts/app.js', revision: '383676' },
+    { url: '/css/style.css', revision: '383676' },
+    { url: '/index.html', revision: '383676' },
+  ]);
 }
 
 function registerRoutes() {
