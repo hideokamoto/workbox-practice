@@ -7,7 +7,32 @@ if (workbox) {
 }
 
 function initPrecaching() {
-  workbox.precaching.precacheAndRoute([]);
+  workbox.precaching.precacheAndRoute([
+  {
+    "url": "css/style.css",
+    "revision": "6dc8050a8cbd35afe5c81575f4bedef6"
+  },
+  {
+    "url": "images/example.png",
+    "revision": "0c48f4a717e32e5646b753d28c5e3756"
+  },
+  {
+    "url": "index.html",
+    "revision": "4845f76b0ee45f51a49cf658c6c3778a"
+  },
+  {
+    "url": "scripts/app.js",
+    "revision": "5c81403e5f5a9ca529a47d78051526b9"
+  },
+  {
+    "url": "sw.js",
+    "revision": "e04da3adc703b44803a0a5bd9d6782c2"
+  },
+  {
+    "url": "workbox-config.js",
+    "revision": "348cd7102c02098b5da00cec47330671"
+  }
+]);
 }
 
 function registerRoutes() {
